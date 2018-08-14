@@ -8,14 +8,17 @@
     "cross-env": "5.1.6",
     "electron-is-dev": "0.3.0",
     "electron-log": "^2.2.6",
+    "express": "^4.15.2",
     "react": "16.4.0",
     "react-dom": "16.4.0",
+    "socket.io": "^2.1.1",
     "update-electron-app": "^1.2.0"
   },
   "devDependencies": {
     "concurrently": "3.5.1",
     "electron": "2.0.2",
     "electron-builder": "^20.15.1",
+    "electron-rebuild": "^1.8.2",
     "prettier": "^1.4.4",
     "react-scripts": "1.1.4",
     "wait-on": "2.1.0"
@@ -35,6 +38,7 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "elec": "concurrently \"wait-on http://localhost:3000 && cross-env electron .\""
   }
 }

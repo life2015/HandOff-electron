@@ -11,9 +11,13 @@ require("update-electron-app")({
   repo: "kitze/react-electron-example",
   updateInterval: "1 hour"
 });
+require('./server/socketServer.js')();
+require('./clipboard/clipboard.js')();
+
 
 function createWindow() {
   mainWindow = new BrowserWindow({ width: 900, height: 680 });
+  mainWindow.webContents.openDevTools();
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
