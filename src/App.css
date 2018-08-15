@@ -1,5 +1,39 @@
 .App {
+  min-height: 100vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: auto;
+  width: 150px;
+  background-color: #F2F3F5;
+}
+
+.left-button {
+  align-self: flex-start;
+  border: 2px solid #42b983;
+  color: #42b983;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1.0em;
+  margin: 8px;
+  padding: .4em 1.2em;
+  background-color: transparent;
+}
+
+.left-button:focus {
+  outline: none;
+  background-color: white;
+}
+.left-button:active {
+  border-color: wheat;
 }
 
 .App-logo {
@@ -9,13 +43,41 @@
 
 .App-header {
   background-color: #222;
-  height: 120px;
+  height: 80px;
   padding: 20px;
   color: white;
 }
 
+.App-body {
+  flex: 1;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .App-intro {
   font-size: large;
+}
+
+.tab-list {
+  flex: 1;
+  transition: all 0.4s ease-out;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
 }
 
 @keyframes App-logo-spin {

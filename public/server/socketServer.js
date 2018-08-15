@@ -11,11 +11,15 @@ module.exports = socketServer => {
         socket.on('message', msg => {
             console.log(msg);
             socket.broadcast.emit('message',msg);
+        });
+        socket.on('DesktopClipBoard', msg => {
+            console.log(msg);
+            socket.broadcast.emit('DesktopClipBoard', msg);
+        });
+        socket.on('MobileClipBoardText', msg => {
+            console.log(msg);
+            socket.broadcast.emit('MobileClipBoardText', msg);
         })
     } );
-    setTimeout(()=> {
-        io.emit('message', 'ser');
-        io.emit('etc','ack' )
-    },5000)
     return io;
 }
